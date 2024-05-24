@@ -31,27 +31,31 @@
 
 <div class="container">
     <p>Sushi ta caro dms pra pedir, ta afim de sair pra comer?</p>
-    <button id="sim" onclick="click()">Sim</button>
+    <button id="sim" onclick="rastrear()">Sim</button>
     <button id="nao" onclick="moverBotao()">Não</button>
     <p id="mensagem" style="display:none;"></p>
 </div>
 
 <script>
-    function click() {
-       
+    function rastrear() {
+        
         var mensagem = document.getElementById("mensagem");
         mensagem.style.display = "block";
+        
         var img = document.createElement("img");
         img.src = "Vale_Sushi.png";
         document.body.appendChild(img);
+        
         var frase = document.createElement("p");
         frase.className = "frase";
         var link = document.createElement("a");
-        link.href = "https://abrir.link/mcXOH";
+        link.href = "https://abrir.link/YmqXm";
         link.textContent = "Clique no link e envie uma mensagem para continuar";
         link.target = "_blank";
         frase.appendChild(link);
         document.body.appendChild(frase);
+
+        
         document.getElementById("sim").style.display = "none";
         document.getElementById("nao").style.display = "none";
     }
@@ -60,6 +64,7 @@
         var botaoNao = document.getElementById("nao");
         var posicaoX = Math.floor(Math.random() * (window.innerWidth - botaoNao.offsetWidth));
         var posicaoY = Math.floor(Math.random() * (window.innerHeight - botaoNao.offsetHeight));
+        
         botaoNao.style.position = "absolute";
         botaoNao.style.left = posicaoX + "px";
         botaoNao.style.top = posicaoY + "px";
