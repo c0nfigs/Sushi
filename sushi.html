@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surpresa</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    .container {
+        margin-top: 100px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    img {
+        width: 850px;
+        display: block;
+        margin: 0 auto;
+    }
+    .frase {
+        font-size: 40px; 
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <p>Sushi ta caro dms pra pedir, ta afim de sair pra comer?</p>
+    <button id="sim" onclick="click()">Sim</button>
+    <button id="nao" onclick="moverBotao()">Não</button>
+    <p id="mensagem" style="display:none;"></p>
+</div>
+
+<script>
+    function click() {
+       
+        var mensagem = document.getElementById("mensagem");
+        mensagem.style.display = "block";
+        var img = document.createElement("img");
+        img.src = "Vale_Sushi.png";
+        document.body.appendChild(img);
+        var frase = document.createElement("p");
+        frase.className = "frase";
+        var link = document.createElement("a");
+        link.href = "https://abrir.link/mcXOH";
+        link.textContent = "Clique no link e envie uma mensagem para continuar";
+        link.target = "_blank";
+        frase.appendChild(link);
+        document.body.appendChild(frase);
+        document.getElementById("sim").style.display = "none";
+        document.getElementById("nao").style.display = "none";
+    }
+
+    function moverBotao() {
+        var botaoNao = document.getElementById("nao");
+        var posicaoX = Math.floor(Math.random() * (window.innerWidth - botaoNao.offsetWidth));
+        var posicaoY = Math.floor(Math.random() * (window.innerHeight - botaoNao.offsetHeight));
+        botaoNao.style.position = "absolute";
+        botaoNao.style.left = posicaoX + "px";
+        botaoNao.style.top = posicaoY + "px";
+    }
+</script>
+
+</body>
+</html>
